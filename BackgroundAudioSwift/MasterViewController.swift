@@ -114,7 +114,7 @@ class MasterViewController: UITableViewController {
         let alertVC = UIAlertController(title: "This is a demo", message: "Unauthorized or restricted access. Cannot play media. Fix in Settings?" , preferredStyle: .alert)
         
         //cancel
-        if let settingsURL = URL(string: UIApplicationOpenSettingsURLString), UIApplication.shared.canOpenURL(settingsURL) {
+      if let settingsURL = URL(string: UIApplication.openSettingsURLString), UIApplication.shared.canOpenURL(settingsURL) {
             alertVC.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:nil))
             let settingsAction = UIAlertAction(title: "Settings", style: .default, handler: { (action) in
                 UIApplication.shared.openURL(settingsURL)
